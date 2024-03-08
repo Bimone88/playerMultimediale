@@ -1,19 +1,32 @@
 package multimedia;
 
-public abstract class RegistrazioneAudio extends ElementoMultimediale implements Riproducibile { // classe astratta
+public abstract class RegistrazioneAudio extends ElementoMultimediale implements Riproducibile {
     private int volume;
 
-    public RegistrazioneAudio(String titolo, int volume) { // paramettri
+    // -------------- COSTRUTTORE --------------
+    public RegistrazioneAudio(String titolo, int volume) {
         super(titolo);
         this.volume = volume;
     }
 
-    public void play() { // metodo fatto per la registrazionee audio
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    @Override
+    public void play() {  // richeiesto dall'Interfaccia, lo richiamo qui:
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < volume; i++) {
-            System.out.println(titolo + ": " + "!".repeat(i + 1));
+            sb.append("!"); // per far si che ogni tacca di volume è un ! ( spero sia corretto )
         }
+        System.out.println(titolo + ": " + sb.toString());
     }
 }
+
 
 
 
