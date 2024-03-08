@@ -47,6 +47,17 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         System.out.println("Video: " + titolo + " - Luminosita: " + luminosita + " - Volume: " + volume);
     }
 
+    // Aggiunta dei metodi per gestire il volume
+    public void alzaVolume() {
+        volume++;
+
+    }
+
+    public void abbassaVolume() {
+        volume--;
+        if (volume < 0) volume = 0;
+    }
+
     // Override del metodo play per riprodurre il video
     @Override
     public void play() {
