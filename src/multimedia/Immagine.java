@@ -1,6 +1,6 @@
 package multimedia;
 
-public class Immagine extends ElementoMultimediale {
+public class Immagine extends ElementoMultimediale implements Visualizzabile {
     private int luminosita;
 
     // -------- COSTRUTTORE ---------

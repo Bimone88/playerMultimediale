@@ -3,12 +3,14 @@ package multimedia;
 public class Video extends ElementoMultimediale implements Riproducibile {
     private int luminosita;
     private int volume;
+    private int durata;
 
     // Costruttore con i nuovi attributi
-    public Video(String titolo, int luminosita, int volume) {
+    public Video(String titolo, int luminosita, int volume, int durata) {
         super(titolo);
         this.luminosita = luminosita;
         this.volume = volume;
+        this.durata = durata;
     }
 
     // Getter e setter per luminosità
@@ -29,25 +31,27 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         this.volume = volume;
     }
 
-    // Metodo di stampa per visualizzare le informazioni del video
-    public void stampa() {
-        System.out.println("Video: " + titolo + " - Luminosita: " + luminosita + " - Volume: " + volume);
+    // Metodo per aumentare la luminosità
+    public void aumentaLuminosita() {
+        luminosita += 10;
     }
 
-    // Override del metodo show per visualizzare il video
-    @Override
-    void show() {
-        for (int i = 0; i < volume; i++) {
-            System.out.println(titolo + ": " + "!".repeat(volume) + "*".repeat(luminosita));
-        }
+    // Metodo per diminuire la luminosità
+    public void diminuisciLuminosita() {
+        if (luminosita > 0) luminosita -= 10;
+    }
+
+
+    // Metodo di stampa per visualizzare le informazioni VIDEO
+    public void stampa() {
+        System.out.println("Video: " + titolo + " - Luminosita: " + luminosita + " - Volume: " + volume);
     }
 
     // Override del metodo play per riprodurre il video
     @Override
     public void play() {
-        for (int i = 0; i < volume; i++) {
-            System.out.println(titolo + ": " + "!".repeat(i + 1) + "*".repeat(luminosita));
+        for (int i = 0; i < durata; i++) { // DURATA
+            System.out.println(titolo + ": " + "!".repeat(volume) + "*".repeat(luminosita));
         }
     }
 }
-

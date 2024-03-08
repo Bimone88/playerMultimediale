@@ -22,14 +22,18 @@ public class Main {
                 case 2:
                     System.out.println("Inserisci il volume: ");
                     int volume = Integer.parseInt(scanner.nextLine());
-                    elementi[i] = new MiaRegistrazioneAudio(titolo, volume); // Creazione istanza di "MiaRegistrazioneAudio" che metto nell'array
+                    System.out.println("Inserisci la durata: ");
+                    int durataAudio = Integer.parseInt(scanner.nextLine()); // Chiede la durata
+                    elementi[i] = new MiaRegistrazioneAudio(titolo, volume, durataAudio); // Passa la durata
                     break;
                 case 3:
                     System.out.println("Inserisci la luminosità: ");
                     int luminositaVideo = Integer.parseInt(scanner.nextLine());
                     System.out.println("Inserisci il volume: ");
                     int volumeVideo = Integer.parseInt(scanner.nextLine());
-                    elementi[i] = new Video(titolo, luminositaVideo, volumeVideo); // Creazione istanxa di VIDEO e la metto nell'array
+                    System.out.println("Inserisci la durata: ");
+                    int durataVideo = Integer.parseInt(scanner.nextLine()); // Chiede la durata
+                    elementi[i] = new Video(titolo, luminositaVideo, volumeVideo, durataVideo); // Passa la durata
                     break;
                 default:
                     System.out.println("Tipo non valido.");

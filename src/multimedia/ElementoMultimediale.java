@@ -7,7 +7,6 @@ public abstract class ElementoMultimediale {
         this.titolo = titolo;
     }
 
-    abstract void show();
 }
 
 
