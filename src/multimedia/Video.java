@@ -1,17 +1,17 @@
 package multimedia;
 
 public class Video extends ElementoMultimediale implements Riproducibile {
-    // istanza variavili:
     private int luminosita;
     private int volume;
 
-    // ----------- COSTRUTTORE PER VIDEO -------------------
+    // Costruttore con i nuovi attributi
     public Video(String titolo, int luminosita, int volume) {
         super(titolo);
         this.luminosita = luminosita;
         this.volume = volume;
     }
 
+    // Getter e setter per luminosità
     public int getLuminosita() {
         return luminosita;
     }
@@ -20,6 +20,7 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         this.luminosita = luminosita;
     }
 
+    // Getter e setter per volume
     public int getVolume() {
         return volume;
     }
@@ -28,14 +29,22 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         this.volume = volume;
     }
 
+    // Metodo di stampa per visualizzare le informazioni del video
+    public void stampa() {
+        System.out.println("Video: " + titolo + " - Luminosita: " + luminosita + " - Volume: " + volume);
+    }
 
-    public void show() { // EREDITARIETà DA ElementoMultimediale
+    // Override del metodo show per visualizzare il video
+    @Override
+    void show() {
         for (int i = 0; i < volume; i++) {
             System.out.println(titolo + ": " + "!".repeat(volume) + "*".repeat(luminosita));
         }
     }
 
-    public void play() { // richeiesto dall'Interfaccia, lo richiamo qui:
+    // Override del metodo play per riprodurre il video
+    @Override
+    public void play() {
         for (int i = 0; i < volume; i++) {
             System.out.println(titolo + ": " + "!".repeat(i + 1) + "*".repeat(luminosita));
         }
