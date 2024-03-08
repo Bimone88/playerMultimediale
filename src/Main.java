@@ -40,7 +40,7 @@ public class Main {
             }
         }
 
-        // Esecuzione e manipolazione degli elementi multimediali
+        // Esecuzione e manipolazione degli elementi multimediali:
         int scelta;
         do {
             System.out.println("Scegli quale elemento eseguire (da 1 a 5, 0 per terminare): ");
@@ -48,7 +48,7 @@ public class Main {
             if (scelta >= 1 && scelta <= elementi.length) {
                 ElementoMultimediale elementoSelezionato = elementi[scelta - 1];
 
-                // Esecuzione dell'elemento
+                // Esecuzione dell'elemento:
                 if (elementoSelezionato instanceof Immagine) {
                     ((Immagine) elementoSelezionato).show();
                 } else if (elementoSelezionato instanceof RegistrazioneAudio) {
@@ -57,7 +57,7 @@ public class Main {
                     ((Video) elementoSelezionato).play();
                 }
 
-                // Manipolazione degli attributi specifici, se necessario
+                // faccio una manipolazione degli attrivbuti speicfici se necessario:
                 System.out.println("Vuoi modificare gli attributi dell'elemento? (s/n)");
                 String risposta = scanner.nextLine();
                 if ("s".equalsIgnoreCase(risposta)) {
