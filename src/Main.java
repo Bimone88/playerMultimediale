@@ -7,7 +7,7 @@ public class Main {
         ElementoMultimediale[] elementi = new ElementoMultimediale[5]; // Creo un array di ElementoMultimediale
 
         // Creazione degli elementi multimediali
-        for (int i = 0; i < elementi.length; i++) {
+        for (int i = 0; i < elementi.length; i++) { // uso un ciclo for dopo di che uso il èarsInt in quanto nextLine è solo per stringhe
             System.out.println("Inserisci il titolo per l'elemento " + (i + 1) + ": ");
             String titolo = scanner.nextLine();
             System.out.println("Scegli il tipo di elemento (1 per Immagine, 2 per Registrazione Audio, 3 per Video): ");
@@ -27,7 +27,7 @@ public class Main {
                     elementi[i] = new MiaRegistrazioneAudio(titolo, volume, durataAudio); // Passa la durata
                     break;
                 case 3:
-                    System.out.println("Inserisci la luminosità: ");
+                    System.out.println("Inserisci la luminosità: "); // lumm
                     int luminositaVideo = Integer.parseInt(scanner.nextLine());
                     System.out.println("Inserisci il volume: ");
                     int volumeVideo = Integer.parseInt(scanner.nextLine());
